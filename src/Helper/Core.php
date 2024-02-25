@@ -4,14 +4,14 @@ namespace LDefaut\WpPlugin\InteractiveMaps;
 
 use JetBrains\PhpStorm\NoReturn;
 
-function dump($value, ...$values): void
+function dump(mixed $value, mixed ...$values): void
 {
     echo "<pre>";
     var_dump($value, ...$values);
     echo "</pre>";
 }
 
-function dd($value, ...$values): void
+function dd(mixed $value, mixed ...$values): void
 {
     dump($value, ...$values);
     die;

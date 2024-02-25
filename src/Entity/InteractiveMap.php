@@ -17,11 +17,13 @@ class InteractiveMap
     ) {
     }
 
+    /** @return array<MapPoint> */
     public function getMapPoints(): array
     {
         return $this->mapPoints;
     }
 
+    /** @param array<MapPoint> $mapPoints */
     public function setMapPoints(array $mapPoints): self
     {
         $this->mapPoints = $mapPoints;
