@@ -1,0 +1,8 @@
+parameters:
+    level: 5 # the analysis level, from 0 (loose) to 8 (strict)
+    paths: # the paths to scan
+        - src/
+        - InteractiveMaps.php
+    ignoreErrors:
+        - '#^Function get_field not found.$#'
+        - '#^Function get_fields not found.$#'
