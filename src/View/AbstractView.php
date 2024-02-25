@@ -6,6 +6,7 @@ namespace LDefaut\WpPlugin\InteractiveMaps\View;
 
 abstract class AbstractView
 {
+    /** @param array<mixed> $props */
     public function __construct(protected array $props = [])
     {
         $this->render();
@@ -14,6 +15,7 @@ abstract class AbstractView
 
     abstract public function render(): string|null;
 
+    /** @return array<mixed> */
     public function getProps(): array
     {
         return $this->props;
@@ -23,6 +25,7 @@ abstract class AbstractView
     {
     }
 
+    /** @param array<mixed> $props */
     public function setProps(array $props): void
     {
         $this->props = $props;

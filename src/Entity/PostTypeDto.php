@@ -10,8 +10,8 @@ class PostTypeDto
 {
     public function __construct(
         protected string $id,
-        protected ?string $name = null,
-        protected ?string $singularName = null,
+        protected string $name,
+        protected string $singularName,
         protected string|bool $showInMenu = true
     ) {
         register_post_type(
@@ -44,7 +44,7 @@ class PostTypeDto
         return $this->singularName;
     }
 
-    public function isShowInMenu(): bool
+    public function isShowInMenu(): bool|string
     {
         return $this->showInMenu;
     }

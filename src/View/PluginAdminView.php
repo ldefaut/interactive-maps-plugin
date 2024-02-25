@@ -9,6 +9,7 @@ class PluginAdminView extends AbstractView
     public function render(): ?string
     {
         $props = $this->getProps();
+        assert(is_string($props['title']));
 
         ?>
             <h2><?= $props['title']?></h2>

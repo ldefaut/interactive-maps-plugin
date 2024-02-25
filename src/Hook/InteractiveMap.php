@@ -16,6 +16,7 @@ class InteractiveMap
         add_shortcode(self::SHORTCODE_NAME, [$this, 'interactiveMapShortcut']);
     }
 
+    /** @param array<mixed> $args */
     public function interactiveMapShortcut(array $args): ?string
     {
         $attributes = shortcode_atts(['id' => null], $args);

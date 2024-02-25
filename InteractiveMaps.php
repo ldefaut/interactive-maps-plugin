@@ -20,6 +20,7 @@ use LDefaut\WpPlugin\InteractiveMaps\Controller\PluginInit;
 
 const PLUGIN_DOMAIN = 'interactive-maps';
 class InteractiveMaps {
+    /** @var string[] */
     private array $includeFolders = [
         "src/Helper",
         "src/Entity",
@@ -29,7 +30,8 @@ class InteractiveMaps {
         "src/View"
     ];
 
-    private array $instanciateFolder = [
+    /** @var string[] */
+    private array $instantiateFolder = [
         "src/Controller",
         "src/Hook"
     ];
@@ -44,7 +46,9 @@ class InteractiveMaps {
     {
         foreach ($this->includeFolders as $folder) {
             // Dans chaque dossier, on inclut chaque fichiers php
-            foreach (glob(plugin_dir_path( __FILE__ ). "$folder/*.php") as $filename) {
+            $filenames = glob(plugin_dir_path( __FILE__ ). "$folder/*.php");
+            assert(is_array($filenames));
+            foreach ($filenames as $filename) {
                 include_once "$filename";
             }
         }
@@ -57,8 +61,10 @@ class InteractiveMaps {
             require_once dirname( __FILE__ ) . '/vendor/autoload.php';
         }
 
-        foreach ($this->instanciateFolder as $folder) {
-            foreach (glob(plugin_dir_path( __FILE__ ). "$folder/*.php") as $filepath) {
+        foreach ($this->instantiateFolder as $folder) {
+            $filepaths = glob(plugin_dir_path( __FILE__ ). "$folder/*.php");
+            assert(is_array($filepaths));
+            foreach ($filepaths as $filepath) {
                 $class = sprintf(
                     '%s\%s\%s',
                     __NAMESPACE__,

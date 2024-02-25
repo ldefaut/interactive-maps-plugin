@@ -79,6 +79,10 @@ class PluginInit
         );
     }
 
+    /**
+     * @param array<string> $columns
+     * @return array<string>
+     */
     public function setInteractiveMapsColumns(array $columns): array
     {
         unset($columns['generated_shortcut']);
