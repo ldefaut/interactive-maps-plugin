@@ -36,4 +36,4 @@ jobs:
         run: composer run-script phpstan
 
       - name: Run phpcs-check
-        run: vendor/bin/php-cs-fixer fix src --verbose --dry-run --using-cache=no
+        run: composer run-script phpcs
