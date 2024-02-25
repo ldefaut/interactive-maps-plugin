@@ -1,5 +1,7 @@
 {
+    "license": "proprietary",
     "name": "ldefaut/interactive-maps",
+    "description": "Wordpress plugin to generate interactive maps",
     "autoload": {
         "psr-4": {
             "LDefaut\\WpPlugin\\InteractiveMaps\\": "/src"
